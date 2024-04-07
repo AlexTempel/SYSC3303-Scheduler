@@ -68,6 +68,8 @@ class SchedulerSubsystemTest {
             assertEquals(elevatorTested.getNumberOfPassengers(), testNumberOfPassengers);
             assertEquals(elevatorTested.isUpwards(), testBroken);
 
+            testSocket.close();
+
         } catch (Exception e) {
             e.printStackTrace();
             fail();
@@ -216,6 +218,8 @@ class SchedulerSubsystemTest {
             Request receivedRequest = Request.parsePacket(testReceivePacket);
             assertEquals(receivedRequest.getRequestID(), testRequest.getRequest().getRequestID());
 
+            elevator3TestReceiveSocket.close();
+
 
             //Case when there is only one elevator going in the right direction
             elevator1.decrementNumberOfPassengers();
@@ -240,6 +244,8 @@ class SchedulerSubsystemTest {
 
             receivedRequest = Request.parsePacket(test2ReceivePacket);
             assertEquals(receivedRequest.getRequestID(), testRequest.getRequest().getRequestID());
+
+            elevator1TestReceiveSocket.close();
 
         } catch (Exception e) {
             e.printStackTrace();

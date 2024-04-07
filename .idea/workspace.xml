@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e16bd9ce-efc8-4611-9f44-2ead281b06c6" name="Changes" comment="created test class for elevator info, finished test for parseString, started test for convertToPacket">
+    <list default="true" id="e16bd9ce-efc8-4611-9f44-2ead281b06c6" name="Changes" comment="Fixed bug in ElevatorInfo convertToPacket()">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElevatorInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElevatorInfo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +59,11 @@
     "JUnit.ElevatorInfoTest.parsePacket.executor": "Run",
     "JUnit.SchedulerSubsystemTest.checkForElevatorUpdates.executor": "Run",
     "JUnit.SchedulerSubsystemTest.executor": "Run",
+    "JUnit.SchedulerSubsystemTest.findClosestElevator.executor": "Run",
+    "JUnit.SchedulerSubsystemTest.findElevator.executor": "Run",
     "JUnit.SchedulerSubsystemTest.outputConsole.executor": "Run",
+    "JUnit.SchedulerSubsystemTest.selectElevator.executor": "Run",
+    "JUnit.SchedulerSubsystemTest.updateElevators.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -91,6 +94,9 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Scheduler" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SchedulerSubsystemTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -109,16 +115,17 @@
       <module name="Scheduler" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SchedulerSubsystemTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="findClosestElevator" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SchedulerSubsystemTest.checkForElevatorUpdates" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SchedulerSubsystemTest.findElevator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Scheduler" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SchedulerSubsystemTest" />
-      <option name="METHOD_NAME" value="checkForElevatorUpdates" />
+      <option name="METHOD_NAME" value="findElevator" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -129,6 +136,16 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SchedulerSubsystemTest" />
       <option name="METHOD_NAME" value="outputConsole" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SchedulerSubsystemTest.selectElevator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Scheduler" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SchedulerSubsystemTest" />
+      <option name="METHOD_NAME" value="selectElevator" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
