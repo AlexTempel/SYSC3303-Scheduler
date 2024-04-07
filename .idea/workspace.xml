@@ -16,10 +16,16 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -47,8 +53,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Run",
+    "Application.Main.executor": "Debug",
     "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.ElevatorInfoTest.executor": "Run",
+    "JUnit.ElevatorInfoTest.parsePacket.executor": "Run",
     "JUnit.SchedulerSubsystemTest.checkForElevatorUpdates.executor": "Run",
     "JUnit.SchedulerSubsystemTest.executor": "Run",
     "JUnit.SchedulerSubsystemTest.findClosestElevator.executor": "Run",
@@ -59,8 +67,12 @@
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "git-widget-placeholder": "ElevatorInfo-Test",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -70,8 +82,17 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.SchedulerSubsystemTest.outputConsole">
-    <configuration name="SchedulerSubsystemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Scheduler" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SchedulerSubsystemTest" />
@@ -80,7 +101,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SchedulerSubsystemTest.findClosestElevator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ElevatorInfoTest.parsePacket" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Scheduler" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ElevatorInfoTest" />
+      <option name="METHOD_NAME" value="parsePacket" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SchedulerSubsystemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Scheduler" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SchedulerSubsystemTest" />
@@ -122,19 +153,18 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SchedulerSubsystemTest.outputConsole" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ElevatorInfoTest.parsePacket" />
+        <item itemvalue="JUnit.SchedulerSubsystemTest.checkForElevatorUpdates" />
         <item itemvalue="JUnit.SchedulerSubsystemTest" />
-        <item itemvalue="JUnit.SchedulerSubsystemTest.findClosestElevator" />
-        <item itemvalue="JUnit.SchedulerSubsystemTest.selectElevator" />
-        <item itemvalue="JUnit.SchedulerSubsystemTest.findElevator" />
+        <item itemvalue="JUnit.SchedulerSubsystemTest.outputConsole" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+        <option value="jdk-22-openjdk-22-f644763e9732-8c5c9ae5" />
       </set>
     </attachedChunks>
   </component>
@@ -148,7 +178,8 @@
       <updated>1712463724302</updated>
       <workItem from="1712463725405" duration="863000" />
       <workItem from="1712464888500" duration="52000" />
-      <workItem from="1712497715676" duration="4096000" />
+      <workItem from="1712497715676" duration="3112000" />
+      <workItem from="1712505805862" duration="5089000" />
     </task>
     <task id="LOCAL-00001" summary="Code is working">
       <option name="closed" value="true" />
@@ -174,13 +205,13 @@
       <option name="project" value="LOCAL" />
       <updated>1712499134204</updated>
     </task>
-    <task id="LOCAL-00004" summary="Fixed bug in ElevatorInfo convertToPacket()">
+    <task id="LOCAL-00004" summary="created test class for elevator info, finished test for parseString, started test for convertToPacket">
       <option name="closed" value="true" />
-      <created>1712503002113</created>
+      <created>1712521490326</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1712503002113</updated>
+      <updated>1712521490326</updated>
     </task>
     <option name="localTasksCounter" value="5" />
     <servers />
@@ -203,7 +234,18 @@
     <MESSAGE value="Code is working" />
     <MESSAGE value="Added test class" />
     <MESSAGE value="outputConsole() only runs when completeRequestList is updated or elevatorList is updated" />
-    <MESSAGE value="Fixed bug in ElevatorInfo convertToPacket()" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug in ElevatorInfo convertToPacket()" />
+    <MESSAGE value="created test class for elevator info, finished test for parseString, started test for convertToPacket" />
+    <option name="LAST_COMMIT_MESSAGE" value="created test class for elevator info, finished test for parseString, started test for convertToPacket" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ElevatorInfo.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
