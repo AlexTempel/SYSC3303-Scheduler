@@ -54,9 +54,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Run",
+    "Application.Main.executor": "Debug",
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.ElevatorInfoTest.executor": "Run",
+    "JUnit.ElevatorInfoTest.parsePacket.executor": "Run",
     "JUnit.SchedulerSubsystemTest.checkForElevatorUpdates.executor": "Run",
     "JUnit.SchedulerSubsystemTest.executor": "Run",
     "JUnit.SchedulerSubsystemTest.outputConsole.executor": "Run",
@@ -86,10 +87,20 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Scheduler" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ElevatorInfoTest.parsePacket" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Scheduler" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ElevatorInfoTest" />
+      <option name="METHOD_NAME" value="parsePacket" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -125,10 +136,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ElevatorInfoTest.parsePacket" />
         <item itemvalue="JUnit.SchedulerSubsystemTest.checkForElevatorUpdates" />
         <item itemvalue="JUnit.SchedulerSubsystemTest" />
         <item itemvalue="JUnit.SchedulerSubsystemTest.outputConsole" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -207,5 +219,16 @@
     <MESSAGE value="outputConsole() only runs when completeRequestList is updated or elevatorList is updated" />
     <MESSAGE value="created test class for elevator info, finished test for parseString, started test for convertToPacket" />
     <option name="LAST_COMMIT_MESSAGE" value="created test class for elevator info, finished test for parseString, started test for convertToPacket" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ElevatorInfo.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

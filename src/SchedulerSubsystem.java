@@ -113,7 +113,7 @@ public class SchedulerSubsystem implements Runnable {
                     //Remove it from the list of outstanding requests
                     outstandingRequestList.remove(r);
                     //Decrease the number of passengers (Assuming one passenger per request
-                    request.getElevator().decrementNumberOfPassengers();
+                    //request.getElevator().decrementNumberOfPassengers();
                     //Set the floor to the destination floor
                     request.getElevator().setCurrentFloor(request.getRequest().getDestinationFloor());
 
