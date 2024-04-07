@@ -79,6 +79,8 @@ public class SchedulerSubsystem implements Runnable {
             if (e.compare(elevator)) {
                 elevatorList.remove(e);
                 elevatorList.add(elevator);
+
+                outputConsole();
                 return;
             }
         }
@@ -114,6 +116,8 @@ public class SchedulerSubsystem implements Runnable {
                     request.getElevator().decrementNumberOfPassengers();
                     //Set the floor to the destination floor
                     request.getElevator().setCurrentFloor(request.getRequest().getDestinationFloor());
+
+                    outputConsole();
                     return;
                 }
             }
@@ -309,7 +313,7 @@ public class SchedulerSubsystem implements Runnable {
 
     @Override
     public void run() {
-        int count = 0;
+        outputConsole();
         while (true) {
             try {
                 checkForElevatorUpdates();
@@ -318,10 +322,6 @@ public class SchedulerSubsystem implements Runnable {
                 continue;
             }
             clearPending();
-            if (count % 100 == 0) {
-                outputConsole();
-            }
-            count++;
         }
     }
 
