@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        int schedulerPort = 20000;
+        int schedulerPort = 20002;
         int infoPort = 20001;
 
         ArrayList<ElevatorSchedulerData> elevatorList = new ArrayList<>();

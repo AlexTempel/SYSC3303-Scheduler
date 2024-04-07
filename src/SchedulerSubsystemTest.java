@@ -1,22 +1,20 @@
 import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
 import java.rmi.server.ExportException;
 import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class SchedulerSubsystemTest {
 
     @Test
     void checkForElevatorUpdates() {
-        int schedulerRequestPort = 19999;
-        int schedulerInfoPort = 19998;
+        int schedulerRequestPort = 20002;
+        int schedulerInfoPort = 20001;
 
         int elevator1Port = 10001;
         int elevator2Port = 10002;
@@ -38,7 +36,7 @@ class SchedulerSubsystemTest {
         int testNumberOfPassengers = 3;
         boolean testDirection = true;
         boolean testBroken = true;
-        DatagramPacket testPacket = (new ElevatorInfo(testFloor, testNumberOfPassengers, testDirection, testBroken)).convertToPacket();
+        DatagramPacket testPacket = ((new ElevatorInfo(testFloor, testNumberOfPassengers, testDirection, testBroken)).convertToPacket());
         assertNotNull(testPacket);
         System.out.println("1");
 
@@ -79,8 +77,8 @@ class SchedulerSubsystemTest {
 
     @Test
     void updateElevators() {
-        int schedulerRequestPort = 19999;
-        int schedulerInfoPort = 19998;
+        int schedulerRequestPort = 20002;
+        int schedulerInfoPort = 20001;
 
         int elevator1Port = 10001;
         int elevator2Port = 10002;
@@ -136,8 +134,8 @@ class SchedulerSubsystemTest {
 
     @Test
     void findElevator() {
-        int schedulerRequestPort = 19999;
-        int schedulerInfoPort = 19998;
+        int schedulerRequestPort = 20002;
+        int schedulerInfoPort = 20001;
 
         int elevator1Port = 10001;
         int elevator2Port = 10002;
@@ -169,14 +167,9 @@ class SchedulerSubsystemTest {
     }
 
     @Test
-    void clearPending() {
-
-    }
-
-    @Test
     void selectElevator() {
-        int schedulerRequestPort = 19999;
-        int schedulerInfoPort = 19998;
+        int schedulerRequestPort = 20002;
+        int schedulerInfoPort = 20001;
 
         int elevator1Port = 10001;
         int elevator2Port = 10002;
@@ -256,8 +249,8 @@ class SchedulerSubsystemTest {
 
     @Test
     void findClosestElevator() {
-        int schedulerRequestPort = 19999;
-        int schedulerInfoPort = 19998;
+        int schedulerRequestPort = 20002;
+        int schedulerInfoPort = 20001;
 
         int elevator1Port = 10001;
         int elevator2Port = 10002;
@@ -291,8 +284,8 @@ class SchedulerSubsystemTest {
 
     @Test
     void outputConsole() {
-        int schedulerRequestPort = 19999;
-        int schedulerInfoPort = 19998;
+        int schedulerRequestPort = 20002;
+        int schedulerInfoPort = 20001;
 
         int elevator1Port = 10001;
         int elevator2Port = 10002;

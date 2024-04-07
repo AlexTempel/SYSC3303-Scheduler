@@ -37,7 +37,7 @@ public class ElevatorInfo {
 
     public DatagramPacket convertToPacket() {
         //Jake code this to convert this object to a packet
-        String message = String.valueOf(this.floor) + "," + String.valueOf(this.numberOfPassengers) + "," + String.valueOf(this.upwards) + "," + String.valueOf(this.broken);
+        String message = String.valueOf(this.floor) + "," + String.valueOf(this.numberOfPassengers) + "," + ((this.upwards) ? "1" : "0") + "," + ((this.broken) ? "1" : "0");
         return new DatagramPacket(message.getBytes(StandardCharsets.UTF_8), message.getBytes().length);
     }
 
