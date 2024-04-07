@@ -5,19 +5,9 @@ import java.nio.charset.StandardCharsets;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ElevatorInfoTest {
-
-    @Test
-    void convertToPacket() {
-        ElevatorInfo testInfo = new ElevatorInfo(4,1,true,false);
-        DatagramPacket testPacket = testInfo.convertToPacket();
-
-        System.out.println(testPacket.getData());
-
-        assertTrue(testPacket instanceof DatagramPacket);
-
-
-    }
-
+    /**
+     * Test for both parsePacket() and convertToPacket(), the two functions work together so the tests were joined
+     */
     @Test
     void parsePacket() {
         ElevatorInfo testInfo = new ElevatorInfo(4,1,true,false);
