@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e16bd9ce-efc8-4611-9f44-2ead281b06c6" name="Changes" comment="outputConsole() only runs when completeRequestList is updated or elevatorList is updated">
+    <list default="true" id="e16bd9ce-efc8-4611-9f44-2ead281b06c6" name="Changes" comment="Fixed bug in ElevatorInfo convertToPacket()">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElevatorInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElevatorInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SchedulerSubsystemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SchedulerSubsystemTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +51,11 @@
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.SchedulerSubsystemTest.checkForElevatorUpdates.executor": "Run",
     "JUnit.SchedulerSubsystemTest.executor": "Run",
+    "JUnit.SchedulerSubsystemTest.findClosestElevator.executor": "Run",
+    "JUnit.SchedulerSubsystemTest.findElevator.executor": "Run",
     "JUnit.SchedulerSubsystemTest.outputConsole.executor": "Run",
+    "JUnit.SchedulerSubsystemTest.selectElevator.executor": "Run",
+    "JUnit.SchedulerSubsystemTest.updateElevators.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -69,14 +70,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.SchedulerSubsystemTest.checkForElevatorUpdates">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Scheduler" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.SchedulerSubsystemTest.outputConsole">
     <configuration name="SchedulerSubsystemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Scheduler" />
       <option name="PACKAGE_NAME" value="" />
@@ -86,11 +80,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SchedulerSubsystemTest.checkForElevatorUpdates" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SchedulerSubsystemTest.findClosestElevator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Scheduler" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SchedulerSubsystemTest" />
-      <option name="METHOD_NAME" value="checkForElevatorUpdates" />
+      <option name="METHOD_NAME" value="findClosestElevator" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SchedulerSubsystemTest.findElevator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Scheduler" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SchedulerSubsystemTest" />
+      <option name="METHOD_NAME" value="findElevator" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -106,12 +110,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SchedulerSubsystemTest.selectElevator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Scheduler" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SchedulerSubsystemTest" />
+      <option name="METHOD_NAME" value="selectElevator" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SchedulerSubsystemTest.checkForElevatorUpdates" />
-        <item itemvalue="JUnit.SchedulerSubsystemTest" />
         <item itemvalue="JUnit.SchedulerSubsystemTest.outputConsole" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.SchedulerSubsystemTest" />
+        <item itemvalue="JUnit.SchedulerSubsystemTest.findClosestElevator" />
+        <item itemvalue="JUnit.SchedulerSubsystemTest.selectElevator" />
+        <item itemvalue="JUnit.SchedulerSubsystemTest.findElevator" />
       </list>
     </recent_temporary>
   </component>
@@ -133,7 +148,7 @@
       <updated>1712463724302</updated>
       <workItem from="1712463725405" duration="863000" />
       <workItem from="1712464888500" duration="52000" />
-      <workItem from="1712497715676" duration="3112000" />
+      <workItem from="1712497715676" duration="4096000" />
     </task>
     <task id="LOCAL-00001" summary="Code is working">
       <option name="closed" value="true" />
@@ -159,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712499134204</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fixed bug in ElevatorInfo convertToPacket()">
+      <option name="closed" value="true" />
+      <created>1712503002113</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712503002113</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,6 +203,7 @@
     <MESSAGE value="Code is working" />
     <MESSAGE value="Added test class" />
     <MESSAGE value="outputConsole() only runs when completeRequestList is updated or elevatorList is updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="outputConsole() only runs when completeRequestList is updated or elevatorList is updated" />
+    <MESSAGE value="Fixed bug in ElevatorInfo convertToPacket()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug in ElevatorInfo convertToPacket()" />
   </component>
 </project>
