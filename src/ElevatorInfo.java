@@ -46,7 +46,7 @@ public class ElevatorInfo {
         byte[] b = packet.getData();
         String m = new String(b);
         String[] pm = m.split(",");// message format will be requestID,startingFloor,destinationFloor,f
-        ElevatorInfo info = new ElevatorInfo(Integer.valueOf(pm[0]),Integer.valueOf(pm[1]), Integer.valueOf(pm[2]) != 0, Integer.valueOf(pm[2]) != 0);
+        ElevatorInfo info = new ElevatorInfo(Integer.valueOf(pm[0]),Integer.valueOf(pm[1]), Integer.valueOf(pm[2]) != 0, Integer.valueOf(pm[3]) != 0);
         //char temp = pm[3].charAt(0); // Separate "finished" indicator bit
 
         return info;
