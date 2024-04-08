@@ -1,9 +1,23 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.InetAddress;
 import java.net.SocketException;
 import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
+        try {
+            FileWriter fw = new FileWriter("log.txt", false);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write("Elevator, Receive Time, Completion Time, Starting Floor, Destination Floor");
+            bw.newLine();
+            bw.close();
+        } catch (IOException e) {
+
+        }
+
+
         int schedulerPort = 20002;
         int infoPort = 20001;
 

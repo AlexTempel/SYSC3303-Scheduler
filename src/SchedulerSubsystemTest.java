@@ -1,12 +1,10 @@
-import org.junit.Before;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-import java.net.SocketException;
-import java.rmi.server.ExportException;
 import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class SchedulerSubsystemTest {
