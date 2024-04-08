@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e16bd9ce-efc8-4611-9f44-2ead281b06c6" name="Changes" comment="Fixed bug in ElevatorInfo convertToPacket()">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SchedulerSubsystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SchedulerSubsystem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="ElevatorInfo-Test" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,7 +54,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Debug",
+    "Application.Main (1).executor": "Run",
+    "Application.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.ElevatorInfoTest.executor": "Run",
     "JUnit.ElevatorInfoTest.parsePacket.executor": "Run",
@@ -72,7 +74,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "create.test.in.the.same.root": "true",
-    "git-widget-placeholder": "ElevatorInfo-Test",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -91,12 +93,9 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Scheduler" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SchedulerSubsystemTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -121,16 +120,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SchedulerSubsystemTest.findElevator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Scheduler" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SchedulerSubsystemTest" />
-      <option name="METHOD_NAME" value="findElevator" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SchedulerSubsystemTest.outputConsole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Scheduler" />
       <option name="PACKAGE_NAME" value="" />
@@ -141,21 +130,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SchedulerSubsystemTest.selectElevator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Scheduler" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SchedulerSubsystemTest" />
-      <option name="METHOD_NAME" value="selectElevator" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.ElevatorInfoTest.parsePacket" />
+      <item itemvalue="JUnit.SchedulerSubsystemTest" />
+      <item itemvalue="JUnit.SchedulerSubsystemTest.outputConsole" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.ElevatorInfoTest.parsePacket" />
-        <item itemvalue="JUnit.SchedulerSubsystemTest.checkForElevatorUpdates" />
         <item itemvalue="JUnit.SchedulerSubsystemTest" />
         <item itemvalue="JUnit.SchedulerSubsystemTest.outputConsole" />
       </list>
