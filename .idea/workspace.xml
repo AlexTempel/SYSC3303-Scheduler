@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e16bd9ce-efc8-4611-9f44-2ead281b06c6" name="Changes" comment="Fixed bug in ElevatorInfo convertToPacket()">
+    <list default="true" id="e16bd9ce-efc8-4611-9f44-2ead281b06c6" name="Changes" comment="Fixed double counting">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SchedulerSubsystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SchedulerSubsystem.java" afterDir="false" />
     </list>
@@ -197,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712521490326</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fixed double counting">
+      <option name="closed" value="true" />
+      <created>1712534476663</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712534476663</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,7 +227,8 @@
     <MESSAGE value="Added test class" />
     <MESSAGE value="outputConsole() only runs when completeRequestList is updated or elevatorList is updated" />
     <MESSAGE value="created test class for elevator info, finished test for parseString, started test for convertToPacket" />
-    <option name="LAST_COMMIT_MESSAGE" value="created test class for elevator info, finished test for parseString, started test for convertToPacket" />
+    <MESSAGE value="Fixed double counting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed double counting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

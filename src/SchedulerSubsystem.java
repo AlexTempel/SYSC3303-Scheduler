@@ -6,6 +6,8 @@ import java.net.SocketTimeoutException;
 import java.nio.charset.StandardCharsets;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class SchedulerSubsystem implements Runnable {
 
@@ -280,6 +282,12 @@ public class SchedulerSubsystem implements Runnable {
         System.out.printf("--------------------------------------------------------------------%n");
         System.out.printf("| %-10s | %-15s | %-20s | %-10s |%n","Elevator","Current Floor", "Number of Passengers", "Status");
         System.out.printf("--------------------------------------------------------------------%n");
+        Collections.sort(elevatorList, new Comparator<ElevatorSchedulerData>() {
+            @Override
+            public int compare(ElevatorSchedulerData e1, ElevatorSchedulerData e2) {
+                return Integer.compare(e1.getSocketNumber(), e2.getSocketNumber());
+            }
+        });
         for(int i = 0; i < elevatorList.size(); i++){
             if(elevatorList.get(i).isBroken()){
                 System.out.printf("| %-10s | %-15s | %-20s | %-10s |%n",elevatorList.get(i).getSocketNumber(),
