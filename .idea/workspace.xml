@@ -52,38 +52,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main (1).executor": "Run",
-    "Application.Main.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.ElevatorInfoTest.executor": "Run",
-    "JUnit.ElevatorInfoTest.parsePacket.executor": "Run",
-    "JUnit.SchedulerSubsystemTest.checkForElevatorUpdates.executor": "Run",
-    "JUnit.SchedulerSubsystemTest.executor": "Run",
-    "JUnit.SchedulerSubsystemTest.findClosestElevator.executor": "Run",
-    "JUnit.SchedulerSubsystemTest.findElevator.executor": "Run",
-    "JUnit.SchedulerSubsystemTest.outputConsole.executor": "Run",
-    "JUnit.SchedulerSubsystemTest.selectElevator.executor": "Run",
-    "JUnit.SchedulerSubsystemTest.updateElevators.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.ElevatorInfoTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ElevatorInfoTest.parsePacket.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SchedulerSubsystemTest.checkForElevatorUpdates.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SchedulerSubsystemTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SchedulerSubsystemTest.findClosestElevator.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SchedulerSubsystemTest.findElevator.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SchedulerSubsystemTest.outputConsole.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SchedulerSubsystemTest.selectElevator.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SchedulerSubsystemTest.updateElevators.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />

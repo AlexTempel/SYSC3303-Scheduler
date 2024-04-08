@@ -246,7 +246,7 @@ public class SchedulerSubsystem implements Runnable {
             DatagramPacket sendPacket = new DatagramPacket(message.getBytes(StandardCharsets.UTF_8), message.getBytes().length);
             requestSocket.send(sendPacket);
             requestSocket.disconnect();
-            bestElevator.incrementNumberOfPassengers();
+            //bestElevator.incrementNumberOfPassengers();
             r.setElevator(bestElevator);
             return true;
         } catch (Exception e) {
