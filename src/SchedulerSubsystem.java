@@ -117,7 +117,7 @@ public class SchedulerSubsystem implements Runnable {
                     //Decrease the number of passengers (Assuming one passenger per request
                     //request.getElevator().decrementNumberOfPassengers();
                     //Set the floor to the destination floor
-                    //request.getElevator().setCurrentFloor(request.getRequest().getDestinationFloor());
+                    request.getElevator().setCurrentFloor(request.getRequest().getDestinationFloor());
 
                     outputConsole();
                     return;
