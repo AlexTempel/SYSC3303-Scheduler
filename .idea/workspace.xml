@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e16bd9ce-efc8-4611-9f44-2ead281b06c6" name="Changes" comment="Added extra state">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SchedulerSubsystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SchedulerSubsystem.java" afterDir="false" />
-    </list>
+    <list default="true" id="e16bd9ce-efc8-4611-9f44-2ead281b06c6" name="Changes" comment="Added print statements for change in state" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,7 +89,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.SchedulerSubsystemTest.findElevator">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Scheduler" />
@@ -101,31 +97,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ElevatorInfoTest.parsePacket" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SchedulerSubsystemTest.checkForElevatorUpdates" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Scheduler" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ElevatorInfoTest" />
-      <option name="METHOD_NAME" value="parsePacket" />
+      <option name="MAIN_CLASS_NAME" value="SchedulerSubsystemTest" />
+      <option name="METHOD_NAME" value="checkForElevatorUpdates" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SchedulerSubsystemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SchedulerSubsystemTest.findElevator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Scheduler" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SchedulerSubsystemTest" />
-      <option name="METHOD_NAME" value="findClosestElevator" />
+      <option name="METHOD_NAME" value="findElevator" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SchedulerSubsystemTest.outputConsole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SchedulerSubsystemTest.selectElevator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Scheduler" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SchedulerSubsystemTest" />
-      <option name="METHOD_NAME" value="outputConsole" />
+      <option name="METHOD_NAME" value="selectElevator" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SchedulerSubsystemTest.updateElevators" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Scheduler" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SchedulerSubsystemTest" />
+      <option name="METHOD_NAME" value="updateElevators" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -133,16 +139,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.ElevatorInfoTest.parsePacket" />
-      <item itemvalue="JUnit.SchedulerSubsystemTest" />
-      <item itemvalue="JUnit.SchedulerSubsystemTest.outputConsole" />
+      <item itemvalue="JUnit.SchedulerSubsystemTest.checkForElevatorUpdates" />
+      <item itemvalue="JUnit.SchedulerSubsystemTest.findElevator" />
+      <item itemvalue="JUnit.SchedulerSubsystemTest.selectElevator" />
+      <item itemvalue="JUnit.SchedulerSubsystemTest.updateElevators" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SchedulerSubsystemTest.findElevator" />
+        <item itemvalue="JUnit.SchedulerSubsystemTest.updateElevators" />
+        <item itemvalue="JUnit.SchedulerSubsystemTest.checkForElevatorUpdates" />
+        <item itemvalue="JUnit.SchedulerSubsystemTest.selectElevator" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.ElevatorInfoTest.parsePacket" />
-        <item itemvalue="JUnit.SchedulerSubsystemTest" />
-        <item itemvalue="JUnit.SchedulerSubsystemTest.outputConsole" />
       </list>
     </recent_temporary>
   </component>
@@ -166,7 +174,7 @@
       <workItem from="1712464888500" duration="52000" />
       <workItem from="1712497715676" duration="3112000" />
       <workItem from="1712505805862" duration="5089000" />
-      <workItem from="1712631699279" duration="3791000" />
+      <workItem from="1712631699279" duration="4427000" />
     </task>
     <task id="LOCAL-00001" summary="Code is working">
       <option name="closed" value="true" />
@@ -232,7 +240,23 @@
       <option name="project" value="LOCAL" />
       <updated>1712626303523</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="There is now a GUI for the console output">
+      <option name="closed" value="true" />
+      <created>1712635893102</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1712635893102</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added print statements for change in state">
+      <option name="closed" value="true" />
+      <created>1712636158761</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1712636158761</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +281,9 @@
     <MESSAGE value="Fixed double counting" />
     <MESSAGE value="The console is now always in the same order" />
     <MESSAGE value="Added extra state" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added extra state" />
+    <MESSAGE value="There is now a GUI for the console output" />
+    <MESSAGE value="Added print statements for change in state" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added print statements for change in state" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

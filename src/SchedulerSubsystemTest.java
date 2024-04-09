@@ -128,11 +128,6 @@ class SchedulerSubsystemTest {
     }
 
     @Test
-    void checkForRequests() {
-
-    }
-
-    @Test
     void findElevator() {
         int schedulerRequestPort = 20002;
         int schedulerInfoPort = 20001;
@@ -279,53 +274,6 @@ class SchedulerSubsystemTest {
             elevator1.setCurrentFloor(4);
             //Check that it selects the closest elevator
             assertEquals(elevator1, testScheduler.findClosestElevator(testScheduler.getElevatorList(), testRequest));
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            fail();
-        }
-    }
-
-    @Test
-    void outputConsole() {
-        int schedulerRequestPort = 20002;
-        int schedulerInfoPort = 20001;
-
-        int elevator1Port = 10001;
-        int elevator2Port = 10002;
-        int elevator3Port = 10003;
-        int elevator4Port = 10004;
-        ElevatorSchedulerData elevator1 = new ElevatorSchedulerData(elevator1Port, InetAddress.getLoopbackAddress());
-        ElevatorSchedulerData elevator2 = new ElevatorSchedulerData(elevator2Port, InetAddress.getLoopbackAddress());
-        ElevatorSchedulerData elevator3 = new ElevatorSchedulerData(elevator3Port, InetAddress.getLoopbackAddress());
-        ElevatorSchedulerData elevator4 = new ElevatorSchedulerData(elevator4Port, InetAddress.getLoopbackAddress());
-
-        ArrayList<ElevatorSchedulerData> initialElevatorList = new ArrayList<>();
-        initialElevatorList.add(elevator1);
-        initialElevatorList.add(elevator2);
-        initialElevatorList.add(elevator3);
-        initialElevatorList.add(elevator4);
-
-        try {
-            SchedulerSubsystem testScheduler = new SchedulerSubsystem(schedulerRequestPort, schedulerInfoPort, initialElevatorList);
-
-            RequestWrapper testFinishedWrapper = new RequestWrapper(new Request(1, 3, 5),
-                    new ElevatorSchedulerData(elevator1Port, InetAddress.getLoopbackAddress()));
-
-            testScheduler.outputConsole();
-            assertTrue(true);
-
-            Thread.sleep(100000); //Test it more than a minute later
-
-            testFinishedWrapper.complete();
-
-            testScheduler.getCompleteRequestList().add(testFinishedWrapper);
-
-            elevator2.incrementNumberOfPassengers();
-            elevator2.incrementNumberOfPassengers();
-            elevator1.setCurrentFloor(12);
-
-            testScheduler.outputConsole();
 
         } catch (Exception e) {
             e.printStackTrace();
