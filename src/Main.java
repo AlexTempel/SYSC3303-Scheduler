@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
+        //Set up logging file
         try {
             FileWriter fw = new FileWriter("log.txt", false);
             BufferedWriter bw = new BufferedWriter(fw);
@@ -16,7 +17,6 @@ public class Main {
         } catch (IOException e) {
 
         }
-
 
         int schedulerPort = 20002;
         int infoPort = 20001;

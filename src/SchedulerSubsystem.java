@@ -1,3 +1,5 @@
+import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -26,6 +28,9 @@ public class SchedulerSubsystem implements Runnable {
     private final ArrayList<RequestWrapper> completeRequestList;
     private final ArrayList<RequestWrapper> outstandingRequestList;
     private final ArrayList<RequestWrapper> pendingRequestList;
+    private JTable table;
+    private JLabel averageTimeLabel;
+    private JLabel numberOfCompletedRequestsLabel;
 
     private enum SchedulerState {
         WAITINGFORREQUEST,
@@ -50,6 +55,8 @@ public class SchedulerSubsystem implements Runnable {
         pendingRequestList = new ArrayList<>();
 
         elevatorList = elevators;
+
+        createConsole();
     }
 
     /**
@@ -279,32 +286,66 @@ public class SchedulerSubsystem implements Runnable {
     }
 
     /**
-     * Console output of system's current state, should look like prototype in README
+     * Set up the GUI frame with starting values
+     */
+    public void createConsole() {
+        //Create Frame
+        JFrame frame = new JFrame("Console");
+        frame.setLayout(new BorderLayout());
+
+        //Create Table
+        String[] columnNames = {"Elevator", "Current Floor", "Number of Passengers", "Status"};
+        Object[][] defaultData = new Object[elevatorList.size()][4];
+        //Put values into table
+        sortElevator();
+        for (int i = 0; i < elevatorList.size(); i++) {
+            defaultData[i][0] = elevatorList.get(i).getSocketNumber();
+            defaultData[i][1] = elevatorList.get(i).getCurrentFloor();
+            defaultData[i][2] = elevatorList.get(i).getNumberOfPassengers();
+            defaultData[i][3] = elevatorList.get(i).isBroken() ? "Broken" : "Normal";
+        }
+        //Put the column names
+        JPanel columnNamesPanel = new JPanel(new GridLayout(1, columnNames.length));
+        for (String columnName : columnNames) {
+            JLabel columnLabel = new JLabel(columnName);
+            columnLabel.setHorizontalAlignment(JLabel.CENTER);
+            columnNamesPanel.add(columnLabel);
+        }
+        frame.add(columnNamesPanel, BorderLayout.NORTH);
+        table = new JTable(defaultData, columnNames);
+        frame.add(table, BorderLayout.CENTER);
+
+        //Text that says the average completion time and number of requests serviced
+        JPanel summaryPanel = new JPanel(new GridLayout(2,1));
+        averageTimeLabel = new JLabel(" Average time to complete requests: 0 seconds");
+        summaryPanel.add(averageTimeLabel);
+        numberOfCompletedRequestsLabel = new JLabel(" Completed requests: 0");
+        summaryPanel.add(numberOfCompletedRequestsLabel);
+        frame.add(summaryPanel, BorderLayout.SOUTH);
+
+        //Center the frame and make it the right size
+        int x = 600;
+        int y = 150;
+        frame.setPreferredSize(new Dimension(x, y));
+        frame.setResizable(false);
+        frame.setLocation((Toolkit.getDefaultToolkit().getScreenSize().width - x)/2, (Toolkit.getDefaultToolkit().getScreenSize().height-y)/2);
+        frame.pack();
+        frame.setVisible(true);
+    }
+
+    /**
+     * Updates the values displayed in the GUI
      */
     public void outputConsole() {
-        System.out.printf("--------------------------------------------------------------------%n");
-        System.out.printf("| %-10s | %-15s | %-20s | %-10s |%n","Elevator","Current Floor", "Number of Passengers", "Status");
-        System.out.printf("--------------------------------------------------------------------%n");
-        Collections.sort(elevatorList, new Comparator<ElevatorSchedulerData>() {
-            @Override
-            public int compare(ElevatorSchedulerData e1, ElevatorSchedulerData e2) {
-                return Integer.compare(e1.getSocketNumber(), e2.getSocketNumber());
-            }
-        });
-        for(int i = 0; i < elevatorList.size(); i++){
-            if(elevatorList.get(i).isBroken()){
-                System.out.printf("| %-10s | %-15s | %-20s | %-10s |%n",elevatorList.get(i).getSocketNumber(),
-                        elevatorList.get(i).getCurrentFloor(),
-                        elevatorList.get(i).getNumberOfPassengers(),
-                        "Broken");
-            } else {
-                System.out.printf("| %-10s | %-15s | %-20s | %-10s |%n",elevatorList.get(i).getSocketNumber(),
-                        elevatorList.get(i).getCurrentFloor(),
-                        elevatorList.get(i).getNumberOfPassengers(),
-                        "Normal");
-            }
-
+        //Update the console values
+        sortElevator();
+        for (int i = 0; i <elevatorList.size(); i++) {
+            table.setValueAt(elevatorList.get(i).getSocketNumber(), i, 0);
+            table.setValueAt(elevatorList.get(i).getCurrentFloor(), i, 1);
+            table.setValueAt(elevatorList.get(i).getNumberOfPassengers(), i, 2);
+            table.setValueAt(elevatorList.get(i).isBroken() ? "Broken" : "Normal", i, 3);
         }
+        //Calculate average completion time
         long avgCompleteTime = 0;
         for(int j = 0; j < completeRequestList.size(); j++){
             long timeToComplete = ChronoUnit.SECONDS.between(completeRequestList.get(j).getReceiveTime(),completeRequestList.get(j).getCompletetionTime());
@@ -315,16 +356,26 @@ public class SchedulerSubsystem implements Runnable {
         } else {
             avgCompleteTime = 0;
         }
+        //Update text
+        averageTimeLabel.setText(" Average time to complete requests: " + avgCompleteTime + " seconds");
+        numberOfCompletedRequestsLabel.setText(" Completed requests: " + completeRequestList.size());
+    }
 
-        System.out.printf("--------------------------------------------------------------------%n");
-        System.out.printf("| %-64s |%n","Average time to complete: "+ Long.toString(avgCompleteTime) +" seconds");
-        System.out.printf("| %-64s |%n","Number of requests serviced: "+ Integer.toString(completeRequestList.size()));
-        System.out.printf("--------------------------------------------------------------------%n");
+    /**
+     * Sort the elements of ElevatorList
+     * Important so that console output stays in the same order
+     */
+    private void sortElevator() {
+        elevatorList.sort(new Comparator<ElevatorSchedulerData>() {
+            @Override
+            public int compare(ElevatorSchedulerData e1, ElevatorSchedulerData e2) {
+                return Integer.compare(e1.getSocketNumber(), e2.getSocketNumber());
+            }
+        });
     }
 
     @Override
     public void run() {
-        outputConsole();
         while (true) {
             try {
                 checkForElevatorUpdates();
