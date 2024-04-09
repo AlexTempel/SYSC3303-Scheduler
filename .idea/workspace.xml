@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e16bd9ce-efc8-4611-9f44-2ead281b06c6" name="Changes" comment="Added print statements for change in state" />
+    <list default="true" id="e16bd9ce-efc8-4611-9f44-2ead281b06c6" name="Changes" comment="Added print statements for change in state">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SchedulerSubsystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SchedulerSubsystem.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,6 +77,7 @@
     "create.test.in.the.same.root": "true",
     "git-widget-placeholder": "GUI",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/alexd/IdeaProjects/SYSC3303-Elevator",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -89,7 +94,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SchedulerSubsystemTest.findElevator">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Scheduler" />
@@ -146,11 +151,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.SchedulerSubsystemTest.findElevator" />
         <item itemvalue="JUnit.SchedulerSubsystemTest.updateElevators" />
         <item itemvalue="JUnit.SchedulerSubsystemTest.checkForElevatorUpdates" />
         <item itemvalue="JUnit.SchedulerSubsystemTest.selectElevator" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>

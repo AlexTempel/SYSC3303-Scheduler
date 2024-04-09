@@ -66,8 +66,12 @@ public class SchedulerSubsystem implements Runnable {
      */
     public void checkForElevatorUpdates() throws IOException {
         if (currentState != SchedulerState.WAITINGFORELEVATORUPDATE) {
-            currentState = SchedulerState.WAITINGFORELEVATORUPDATE;
-            System.out.println("Scheduler state: " + currentState);
+            if (currentState == SchedulerState.WAITINGFORREQUEST) {
+                currentState = SchedulerState.WAITINGFORELEVATORUPDATE;
+            } else {
+                currentState = SchedulerState.WAITINGFORELEVATORUPDATE;
+                System.out.println("Scheduler state: " + currentState);
+            }
         }
         DatagramPacket receivePacket = new DatagramPacket(new byte[1024], 1024);
         try {
@@ -110,8 +114,12 @@ public class SchedulerSubsystem implements Runnable {
      */
     public void checkForRequests() throws IOException {
         if (currentState != SchedulerState.WAITINGFORREQUEST) {
-            currentState = SchedulerState.WAITINGFORREQUEST;
-            System.out.println("Scheduler state: " + currentState);
+            if (currentState == SchedulerState.WAITINGFORELEVATORUPDATE) {
+                currentState = SchedulerState.WAITINGFORREQUEST;
+            } else {
+                currentState = SchedulerState.WAITINGFORREQUEST;
+                System.out.println("Scheduler state: " + currentState);
+            }
         }
         DatagramPacket receivePacket = new DatagramPacket(new byte[1024], 1024);
         try {
@@ -184,12 +192,12 @@ public class SchedulerSubsystem implements Runnable {
      * If you can send one try with the next until you can't send any or the list is empty
      */
     public void clearPending() {
+        if (pendingRequestList.isEmpty()) {
+            return;
+        }
         if (currentState != SchedulerState.CHECKINGPENDINGREQUESTS) {
             currentState = SchedulerState.CHECKINGPENDINGREQUESTS;
             System.out.println("Scheduler state: " + currentState);
-        }
-        if (pendingRequestList.isEmpty()) {
-            return;
         }
         if (selectElevator(pendingRequestList.getFirst())) {
             pendingRequestList.removeFirst();
@@ -346,7 +354,7 @@ public class SchedulerSubsystem implements Runnable {
 
         //Center the frame and make it the right size
         int x = 600;
-        int y = 150;
+        int y = 80 + elevatorList.size() * 17;
         frame.setPreferredSize(new Dimension(x, y));
         frame.setResizable(false);
         frame.setLocation((Toolkit.getDefaultToolkit().getScreenSize().width - x)/2, (Toolkit.getDefaultToolkit().getScreenSize().height-y)/2);
