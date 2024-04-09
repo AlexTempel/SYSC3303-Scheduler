@@ -28,16 +28,17 @@ public class SchedulerSubsystem implements Runnable {
     private final ArrayList<RequestWrapper> pendingRequestList;
 
     private enum SchedulerState {
-        RECEIVINGREQUEST,
-        RECEVINGUPDATE,
+        WAITINGFORREQUEST,
+        WAITINGFORELEVATORUPDATE,
         UPDATINGINFO,
+        CHECKINGPENDINGREQUESTS,
         SENDING
     }
 
     private SchedulerState currentState;
 
     SchedulerSubsystem(int requestSocketPort, int infoSocketPort, ArrayList<ElevatorSchedulerData> elevators) throws SocketException {
-        currentState = SchedulerState.RECEIVINGREQUEST;
+        currentState = SchedulerState.WAITINGFORREQUEST;
 
         requestSocket = new DatagramSocket(requestSocketPort);
         requestSocket.setSoTimeout(10);
@@ -57,7 +58,7 @@ public class SchedulerSubsystem implements Runnable {
      * @throws IOException if socket fails
      */
     public void checkForElevatorUpdates() throws IOException {
-        currentState = SchedulerState.RECEVINGUPDATE;
+        currentState = SchedulerState.WAITINGFORELEVATORUPDATE;
         DatagramPacket receivePacket = new DatagramPacket(new byte[1024], 1024);
         try {
             infoSocket.receive(receivePacket);
@@ -95,7 +96,7 @@ public class SchedulerSubsystem implements Runnable {
      * If they are incomplete add it to the list of outstanding requests and pending requests
      */
     public void checkForRequests() throws IOException {
-        currentState = SchedulerState.RECEIVINGREQUEST;
+        currentState = SchedulerState.WAITINGFORREQUEST;
         DatagramPacket receivePacket = new DatagramPacket(new byte[1024], 1024);
         try {
             requestSocket.receive(receivePacket);
@@ -161,6 +162,7 @@ public class SchedulerSubsystem implements Runnable {
      * If you can send one try with the next until you can't send any or the list is empty
      */
     public void clearPending() {
+        currentState = SchedulerState.CHECKINGPENDINGREQUESTS;
         if (pendingRequestList.isEmpty()) {
             return;
         }
