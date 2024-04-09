@@ -1,7 +1,8 @@
 SYSC 3303 Group 8 Scheduler
 
 Setup Intruction: 
-in main set the scheduler port number and infor port number to what was agreed upon by the out system. then change the port numbers and ip address to match what the elevators are running on. 
+in main set the scheduler port number and infor port number to what was agreed upon by the out system. 
+then change the port numbers and ip address to match what the elevators are running on. 
 
 File Descriptions:
 ElevatorInfo: Constructed from packets sent between Scheduler and Elevator, meant for Elevator to update the Scheduler on its status
