@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e16bd9ce-efc8-4611-9f44-2ead281b06c6" name="Changes" comment="Added print statements for change in state">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e16bd9ce-efc8-4611-9f44-2ead281b06c6" name="Changes" comment="Made the state change outputs not print when going between checking for request and checking for update, and changed the GUI to dynamically size based on the number of elevators">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SchedulerSubsystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SchedulerSubsystem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,6 +162,7 @@
       <set>
         <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
         <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+        <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
       </set>
     </attachedChunks>
   </component>
@@ -261,7 +260,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712636158761</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Made the state change outputs not print when going between checking for request and checking for update, and changed the GUI to dynamically size based on the number of elevators">
+      <option name="closed" value="true" />
+      <created>1712669603327</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1712669603327</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,7 +295,8 @@
     <MESSAGE value="Added extra state" />
     <MESSAGE value="There is now a GUI for the console output" />
     <MESSAGE value="Added print statements for change in state" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added print statements for change in state" />
+    <MESSAGE value="Made the state change outputs not print when going between checking for request and checking for update, and changed the GUI to dynamically size based on the number of elevators" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made the state change outputs not print when going between checking for request and checking for update, and changed the GUI to dynamically size based on the number of elevators" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
