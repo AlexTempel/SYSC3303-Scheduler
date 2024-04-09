@@ -65,7 +65,10 @@ public class SchedulerSubsystem implements Runnable {
      * @throws IOException if socket fails
      */
     public void checkForElevatorUpdates() throws IOException {
-        currentState = SchedulerState.WAITINGFORELEVATORUPDATE;
+        if (currentState != SchedulerState.WAITINGFORELEVATORUPDATE) {
+            currentState = SchedulerState.WAITINGFORELEVATORUPDATE;
+            System.out.println("Scheduler state: " + currentState);
+        }
         DatagramPacket receivePacket = new DatagramPacket(new byte[1024], 1024);
         try {
             infoSocket.receive(receivePacket);
@@ -85,7 +88,10 @@ public class SchedulerSubsystem implements Runnable {
      * @param elevator the Elevator object to update the list with
      */
     public void updateElevators(ElevatorSchedulerData elevator) {
-        currentState = SchedulerState.UPDATINGINFO;
+        if (currentState != SchedulerState.UPDATINGINFO) {
+            currentState = SchedulerState.UPDATINGINFO;
+            System.out.println("Scheduler state: " + currentState);
+        }
         for (ElevatorSchedulerData e : elevatorList) {
             if (e.compare(elevator)) {
                 elevatorList.remove(e);
@@ -103,7 +109,10 @@ public class SchedulerSubsystem implements Runnable {
      * If they are incomplete add it to the list of outstanding requests and pending requests
      */
     public void checkForRequests() throws IOException {
-        currentState = SchedulerState.WAITINGFORREQUEST;
+        if (currentState != SchedulerState.WAITINGFORREQUEST) {
+            currentState = SchedulerState.WAITINGFORREQUEST;
+            System.out.println("Scheduler state: " + currentState);
+        }
         DatagramPacket receivePacket = new DatagramPacket(new byte[1024], 1024);
         try {
             requestSocket.receive(receivePacket);
@@ -116,7 +125,10 @@ public class SchedulerSubsystem implements Runnable {
             //Remove request from list of outstanding requests
             for (RequestWrapper r : outstandingRequestList) {
                 if (r.getRequest().getRequestID() == request.getRequest().getRequestID()) {
-                    currentState = SchedulerState.UPDATINGINFO;
+                    if (currentState != SchedulerState.UPDATINGINFO) {
+                        currentState = SchedulerState.UPDATINGINFO;
+                        System.out.println("Scheduler state: " + currentState);
+                    }
                     //Set finished time
                     r.complete();
                     //Add it to the list of complete requests
@@ -142,7 +154,10 @@ public class SchedulerSubsystem implements Runnable {
             Add it to the list of outstanding requests
             Add it to the pending list of requests
              */
-            currentState = SchedulerState.UPDATINGINFO;
+            if (currentState != SchedulerState.UPDATINGINFO) {
+                currentState = SchedulerState.UPDATINGINFO;
+                System.out.println("Scheduler state: " + currentState);
+            }
             request.setElevator(null);
             outstandingRequestList.add(request);
             pendingRequestList.add(request);
@@ -169,7 +184,10 @@ public class SchedulerSubsystem implements Runnable {
      * If you can send one try with the next until you can't send any or the list is empty
      */
     public void clearPending() {
-        currentState = SchedulerState.CHECKINGPENDINGREQUESTS;
+        if (currentState != SchedulerState.CHECKINGPENDINGREQUESTS) {
+            currentState = SchedulerState.CHECKINGPENDINGREQUESTS;
+            System.out.println("Scheduler state: " + currentState);
+        }
         if (pendingRequestList.isEmpty()) {
             return;
         }
@@ -249,7 +267,10 @@ public class SchedulerSubsystem implements Runnable {
         //Send request to best elevator
 
         try {
-            currentState = SchedulerState.SENDING;
+            if (currentState != SchedulerState.SENDING) {
+                currentState = SchedulerState.SENDING;
+                System.out.println("Scheduler state: " + currentState);
+            }
 
             requestSocket.connect(bestElevator.getIpAddress(), bestElevator.getSocketNumber());
             String message = r.getRequest().convertToPacketMessage();
